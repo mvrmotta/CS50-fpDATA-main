@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+  <h1 class="display-4">Welcome to Pet Finance!</h1>
+  <p class="lead">Organize and analyze your pet expenses in a simple, visual, and efficient way.</p>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">✅ Expense control by category</li>
+    <li class="list-group-item">✅ Visual reports with charts</li>
+    <li class="list-group-item">✅ Track how much you spend per pet</li>
+    <li class="list-group-item">✅ Make better financial decisions</li>
+  </ul>
+  <a href="{{ url_for('users.register') }}" class="btn btn-primary btn-lg mt-4">Get started now!</a>
+</div>
+
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='home_pet.png') }}" alt="Pets" class="img-fluid rounded">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}List Expenses{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">List of Expenses</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Pet</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    {% for exp in expenses %}
+    <tr>
+        <td>{{ exp.category.name }}</td>
+        <td>{{ exp.pet.name if exp.pet else 'None' }}</td>
+        <td>{{ exp.description }}</td>
+        <td>{{ exp.amount }}</td>
+        <td>{{ exp.date }}</td>
+        <td>
+                <form action="{{ url_for('expenses.delete_expense', expense_id=exp.id) }}" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                </form>
+            </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

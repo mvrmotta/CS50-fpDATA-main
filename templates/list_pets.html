@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}My Pets{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">My Pets</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Species</th>
+            <th>Breed</th>
+            <th>Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pet in pets %}
+        <tr>
+            <td>{{ pet.name }}</td>
+            <td>{{ pet.species }}</td>
+            <td>{{ pet.breed }}</td>
+            <td>{{ pet.weight }} kg</td>
+            <td>
+                <form action="{{ url_for('pets.delete_pet', pet_id=pet.id) }}" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
