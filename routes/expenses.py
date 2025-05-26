@@ -11,7 +11,7 @@ expenses = Blueprint('expenses', __name__)
 def add_expense():
     form = ExpenseForm()
     form.category.choices = [(c.id, c.name) for c in Category.query.all()]
-    form.pet.choices = [(0, 'None')] + [(p.id, p.name) for p in Pet.query.all()]
+    form.pet.choices = [(0, 'None')] + [(p.id, p.name) for p in Pet.query.filter_by(user_id=current_user.id).all()]
 
     if form.validate_on_submit():
         pet_id = form.pet.data if form.pet.data != 0 else None
