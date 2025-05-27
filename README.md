@@ -1,5 +1,5 @@
 # CS50 - Pet Finance 
-#### Video Demo:  <URL HERE>
+#### Video Demo:  <(https://youtu.be/NhFBcfmcS7A)>
 #### Description:
 
 
@@ -14,7 +14,7 @@ This application serves pet owners who want to keep track of how much they are s
 🚀 Project Overview
 The core functionality of Pet Finance includes:
 
-User Registration and Login: secure authentication system using Flask-Login.
+User Registration and Login: secure authentication system using Flask-Login and WTForms.
 
 Pet Management: users can register multiple pets and keep track of each one’s specific expenses.
 
